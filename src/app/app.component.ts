@@ -8,3 +8,4 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'EsPerMe';
 }
+var message:string = "Hello World" 
