@@ -1,7 +1,32 @@
 <html>
   <body>
     <div>
-      <p>{{message}}</p>
+      <p>{{message}}</p><!--interpolazione-->
+      <p [innerText]="message"></p><!--Binding-->
+
+      <p>{{message+"e altri"}}</p><!--interpolazione-->
+      <p [innerText]="message+'altri'"></p><!--Binding-->
+
+      <p>{{message + message2}}</p><!--interpolazione-->
+    </div>
+
+    <div>
+      <button (click)="message='Covid'">Cliccami cambio il message</button>
+      <!-- Nel parametro della finzione click posso scrivere
+      codice di typescript e javascript. è una istruzione che parte al click del
+      bottone i cambiamenti però avvengono solo nel dataBinding
+      e non nelle interpolazioni, in questo caso la variabile message
+      assume il valore Covid da tutte le parti(Binding)-->
+      <button (click)="getClick()">Cliccami richiamo getClick</button>
+      <!--Qui sto richiamando la funzione invece-->
+      <button (click)="getClick2($event)">Cliccami richiamo getClick2 invece</button>
+      <!--Il $event crea un mouse di tipo event darà informazioni visibili in console-->
+      <!--(click) è tipo evento, azione fatta dall'utente-->
+    </div>
+     <br>
+    <div>
+      <input type="text" (input)="getText($event)">
+      <p [innerText]="stampa"></p>
     </div>
   </body>
 </html>
